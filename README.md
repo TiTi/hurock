@@ -1,6 +1,8 @@
 # hurock
 A classic sidebar Hugo theme
 
+[My personnal Hugo blog](https://titi.github.io/)
+
 # Screenshots
 
 index.html:
@@ -23,7 +25,7 @@ Content view:
 
 * No external ressources (js/css/fonts)
 * Easy to add stuff in header/footer
-* Syntax highlight on client side using highlight.js
+* Syntax highlight on client side using [highlight.js](https://highlightjs.org/)
 * Shortcodes for vimeo/youtube/gist
 * W3C valid
  * Clean HTML
