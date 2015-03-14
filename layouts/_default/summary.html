@@ -7,7 +7,7 @@
         <h2><a href="{{ .RelPermalink }}">{{ .Title }} {{ if .Draft }} (draft) {{end}}</a></h2>
     </header>
     <div class="post-description">
-        <p>{{ .Summary }}</p>
+        {{ .Summary }}
         {{ if .Truncated }}<span class="genericon genericon-reply"></span> <a class="readmore" href="{{ .RelPermalink }}">Read more »</a>{{ end }}
     </div>
 </section>
