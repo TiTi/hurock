@@ -1,0 +1,12 @@
+{{ partial "header.html" . }}
+{{ partial "sidebar.html" . }}
+
+<div id="container">
+  <div class="posts">
+    {{ range first 10 (where .Site.Recent "Section" "posts") }}
+{{ .Render "summary" }}
+    {{ end }}
+  </div>
+</div>
+
+{{ partial "footer.html" . }}

@@ -1,0 +1,14 @@
+name = "hurock"
+description = "a distraction-free hugo theme"
+license = "MIT"
+licenselink = "http://opensource.org/licenses/MIT"
+homepage = "https://github.com/titi/hurock"
+tags = ["blog", "personal"]
+features = ["sidebar", "TableOfContents", "highlight", "distraction-free"]
+
+[author]
+  name = "Thibault ROHMER"
+  homepage = "http://titi.github.io"
+
+[params]
+  highlight_theme = "tomorrow-night"
