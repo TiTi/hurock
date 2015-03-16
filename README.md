@@ -54,6 +54,7 @@ title = "Your site title"
 [params]
   Description = "text under logo"
   # Optional
+  disqusShortname = ""
   highlight_theme = "tomorrow-night"
   notoc = true
 
