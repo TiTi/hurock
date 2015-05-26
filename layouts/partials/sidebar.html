@@ -1,22 +1,22 @@
 <div id="sidebar">
 <div class="sidebar">
   <div class="sidebar-about">
-    <a href="{{ .Site.BaseUrl }}">
+    <a href="{{ .Site.BaseURL }}">
       <img src="media/me.jpg" title="{{ .Site.Author.name }}" alt="Me" />
       <h4 class="sidebar-title">{{ .Site.Title }}</h4>
     </a>
-    <span class="sidebar-tagline">{{ with .Site.Params.Description }} {{ . | safeHtml}} {{end}}</span>
+    <span class="sidebar-tagline">{{ with .Site.Params.Description }} {{ . | safeHTML}} {{end}}</span>
   </div>
   <nav class="sidebar-nav">
     <ul class="sidebar-nav-list">
       <li class="sidebar-nav-item nav-home">
-        <span class="genericon genericon-home"></span><a class="sidebar-link" href="{{.Site.BaseUrl}}">Home</a>
+        <span class="genericon genericon-home"></span><a class="sidebar-link" href="{{.Site.BaseURL}}">Home</a>
       </li>
       <li class="sidebar-nav-item">
-        <a class="genericon genericon-feed" href="/posts/index.xml"></a><a class="sidebar-link" href="/posts/">Posts/</a>
+        <a class="genericon genericon-feed" href="posts/index.xml"></a><a class="sidebar-link" href="posts/">Posts/</a>
       </li>
       <li class="sidebar-nav-item">
-        <a class="genericon genericon-feed" href="/links/index.xml"></a><a class="sidebar-link" href="/links/">Links/</a>
+        <a class="genericon genericon-feed" href="links/index.xml"></a><a class="sidebar-link" href="links/">Links/</a>
       </li>
     </ul>
   </nav>

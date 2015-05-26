@@ -2,13 +2,13 @@
 
 <div id="container">
   <div class="posts">
-    {{ range first 5 (where .Site.Recent "Section" "links") }}
+    {{ range first 5 (where .Site.Pages "Section" "links") }}
 {{ .Render "summary" }}
     {{ end }}
   </div>
   <hr />
   <div class="posts">
-    {{ range first 10 (where .Site.Recent "Section" "posts") }}
+    {{ range first 10 (where .Site.Pages "Section" "posts") }}
 {{ .Render "summary" }}
     {{ end }}
   </div>
