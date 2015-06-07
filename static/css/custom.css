@@ -302,6 +302,13 @@ text-align: center;
 color: #888;
 }
 .footnote a:hover{
-text-decoration:underline;
+text-decoration: underline;
 color:#369;
+}
+
+/* shortcodes
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.youtube-player {
+border: 0;
 }
