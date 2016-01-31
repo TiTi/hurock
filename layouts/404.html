@@ -45,18 +45,20 @@ display: none;
 
 {{ partial "flex-start.html" . }}
 
-<h1>Oops! That page couldn't be found :-/</h1>
-Want to play some SpaceInvaders instead?
+<div align="center">
+  <h1>Oops! That page couldn't be found :-/</h1>
+  Want to play some SpaceInvaders instead?
 
-<div class="ctn">
-  <canvas id="game-canvas" width="600" height="400"></canvas>
-  <div id="splash">
-    <a href="#" onclick="play();" style="font-size: 26px;">Play again!</a>
-    <br/>
-    <a href="https://github.com/pjnovas/invaders404" target="_blank">[Project homepage]</a>
+  <div class="ctn">
+    <canvas id="game-canvas" width="600" height="400"></canvas>
+    <div id="splash">
+      <a href="#" onclick="play();return false;" style="font-size: 26px;">Play again!</a>
+      <br/>
+      <a href="https://github.com/pjnovas/invaders404" target="_blank">[Project homepage]</a>
+    </div>
   </div>
+  <span id="fps"></span>
 </div>
-<span id="fps"></span>
 
 {{ partial "flex-end.html" . }}
 
