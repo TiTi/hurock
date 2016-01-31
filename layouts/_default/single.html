@@ -1,29 +1,28 @@
 {{ partial "header.html" . }}
+{{ partial "flex-start.html" . }}
 
-<div id="container">
-  <div id="post-header">
-    <p class="post-infos">
-      <time>{{ .Date.Format "2006-01-02 15:04" }}</time>
-      {{ .Render "tags" }}
-    </p>
-    <h1>{{ .Title }}</h1>
-  </div>
-
-  {{ if and (not .Site.Params.notoc) .TableOfContents }}
-  <div class="toc">
-    <small class="toc-label">Contents</small>
-    {{ .TableOfContents }}
-  </div>
-  {{ end }}
-
-  <div class="post">
-    {{ .Content }}
-  </div>
-
-  {{ if isset .Site.Params "disqusShortname" }}
-    {{ partial "disqus.html" . }}
-  {{ end }}
+<div id="post-header">
+  <p class="post-infos">
+    <time>{{ .Date.Format "2006-01-02 15:04" }}</time>
+    {{ .Render "tags" }}
+  </p>
+  <h1>{{ .Title }}</h1>
 </div>
 
-{{ partial "sidebar.html" . }}
+{{ if and (not .Site.Params.notoc) .TableOfContents }}
+<div class="toc">
+  <small class="toc-label">Contents</small>
+  {{ .TableOfContents }}
+</div>
+{{ end }}
+
+<div class="post">
+  {{ .Content }}
+</div>
+
+{{ if isset .Site.Params "disqusShortname" }}
+  {{ partial "disqus.html" . }}
+{{ end }}
+
+{{ partial "flex-end.html" . }}
 {{ partial "footer.html" . }}

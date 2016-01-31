@@ -1,16 +1,120 @@
 /* layout
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-#sidebar {
-position: fixed;
+/* Explanations:
+
+- #fake-sidebar is present so that we can use both width:% and min-width on #sidebar
+Without min-width, it would look ugly at a certain point
+- Therefore #fake-sidebar and #sidebar have same width at any time
+- Sidebar disappear when width<800px
+- But a burger menu appear and use can use it to display sidebar again
+*/
+
+#fake-sidebar,#sidebar {
 width: 20%;
-top: 0;
-bottom: 0;
+min-width: 240px;
+transition: all 0.5s;
 }
 
-#container,
-footer {
-margin-left: 20%;
+#sidebar {
+position: fixed;
+top: 0;
+bottom: 0;
+left: 0;
+}
+
+#flex-container {
+display: flex;
+/* Make sure height goes to bottom of screen even if small article, but allow it to expand vertically */
+min-height: 100vh;
+/* For child elements with position: absolute; Mostly #container-mask would otherwise be stuck at 100vh */
+position: relative;
+}
+
+#container {
+flex: 1;
+z-index: 1;
+}
+
+#sidebar-menu-checkbox {
+/* Hide the checkbox */
+position: absolute;
+clip: rect(0, 0, 0, 0);
+}
+
+#sidebar-menu {
+position: fixed;
+display: none;
+top: 10px;
+left: 10px;
+z-index: 3;
+
+/* Burger menu */
+width: 24px;
+height: 4px;
+border-top: 12px double #000;
+border-bottom: 4px solid #000;
+cursor: pointer;
+}
+
+@media (max-width:800px) {
+  #fake-sidebar {
+    width: 0;
+    min-width: 0;
+  }
+  #sidebar-menu {
+    display: block;
+  }
+}
+
+#container-mask {
+display: none;
+position: absolute;
+width: 100%;
+height: 100%;
+opacity: 0.5;
+background-color: #222;
+z-index: 2;
+}
+
+/* Responsive layout when burger button is clicked */
+#sidebar-menu-checkbox:checked ~ #flex-container #fake-sidebar{
+/* We have to re-specify values here... */
+width: 20%;
+min-width: 240px;
+}
+#sidebar-menu-checkbox:checked + #sidebar-menu{
+/* Burger menu change color when used */
+border-color: #fff;
+}
+#sidebar-menu-checkbox:checked ~ #flex-container #container-mask{
+display: block;
+}
+#sidebar-menu-checkbox:checked ~ #flex-container{
+/* Without this, page has excess horizontal scroll when the menu is open and min-width is reached */
+overflow-x: hidden;
+}
+#sidebar-menu-checkbox:checked ~ #sidebar{
+/* Ability to scroll on mobile
+Unfortunately, it doesn't look that great on my mobile.
+Height doesn't go all the way to bottom. But it's better than position: fixed */
+position: absolute;
+}
+
+/* Restore things in case resolution change after hiting #sidebar-menu */
+@media (min-width:800px) {
+  #sidebar-menu-checkbox:checked ~ #flex-container #container-mask {
+    display: none;
+  }
+  #sidebar-menu-checkbox:checked ~ #flex-container{
+    overflow-x: initial;
+  }
+}
+
+@media print {
+  #sidebar,#fake-sidebar,#sidebar-menu {
+    display: none;
+  }
 }
 
 
@@ -21,7 +125,7 @@ margin-left: 20%;
 background-color: #484848;
 }
 
-body {
+body,#container {
 background-color: #F8F8F8;
 }
 
@@ -31,11 +135,9 @@ background-color: #F8F8F8;
 
 .sidebar {
 padding: 2rem;
-height: 100%;
 }
-
 #container {
-padding: 2rem 4rem;;
+padding: 2rem 4rem 0;
 }
 
 footer {
@@ -119,23 +221,25 @@ color: #ffa;
 .sidebar-bottom {
 position: absolute;
 bottom: 0;
+left: 0;
 color: rgba(255,255,255,.5);
 font-size: 16px;
-padding: 2rem;
+margin: 2rem 4rem;
 }
 .sidebar-bottom p {
 margin: 0;
+display: inline-block;
 }
 .sidebar-bottom a {
 text-decoration: none;
 }
 
-@media screen and (max-height:830px) {
+@media (max-height:865px) {
   .sidebar-bottom {
     display: none;
   }
 }
-@media screen and (max-width:1600px) {
+@media (max-width:1400px) {
   .sidebar-bottom {
     display: none;
   }

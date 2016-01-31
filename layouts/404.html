@@ -43,7 +43,8 @@ display: none;
 }
 </style>
 
-<div id="container">
+{{ partial "flex-start.html" . }}
+
 <h1>Oops! That page couldn't be found :-/</h1>
 Want to play some SpaceInvaders instead?
 
@@ -57,10 +58,9 @@ Want to play some SpaceInvaders instead?
 </div>
 <span id="fps"></span>
 
-</div>
+{{ partial "flex-end.html" . }}
 
 <script type="text/javascript" src="404/game.min.js"></script>
 <script type="text/javascript" src="404/start.js"></script>
 
-{{ partial "sidebar.html" . }}
 {{ partial "footer.html" . }}
