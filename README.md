@@ -5,9 +5,13 @@ A classic sidebar Hugo theme
 
 # Screenshots
 
-index.html:
+Home page links:
 
 <img src="https://raw.githubusercontent.com/titi/hurock/master/images/screenshot1.png" width="800" />
+
+Home page posts:
+
+<img src="https://raw.githubusercontent.com/titi/hurock/master/images/screenshot.png" width="800" />
 
 List view:
 
@@ -21,16 +25,22 @@ Content view:
 
 <img src="https://raw.githubusercontent.com/titi/hurock/master/images/screenshot4.png" width="800" />
 
+Mobile:
+
+<img src="https://raw.githubusercontent.com/titi/hurock/master/images/screenshot5.png" />
+
 # Concept
 
 * No external ressources (js/css/fonts)
 * Easy to add stuff in header/footer
 * Syntax highlight on client side using [highlight.js](https://highlightjs.org/)
+* Responsive design
 * Shortcodes for vimeo/youtube/gist
 * W3C valid
  * Clean HTML
  * Sidebar after content
  * CSS in head, JS before end of body
+* Fun 404 page!
 
 Theme mostly insipred on theme `nofancy` but also: `hyde-x`, `lanyon`, `liquorice`, `purehugo`, `redlounge`.
 
