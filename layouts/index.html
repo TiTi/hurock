@@ -2,13 +2,13 @@
 {{ partial "flex-start.html" . }}
 
 <div class="posts">
-  {{ range first 5 (where .Site.Pages "Section" "links") }}
+  {{ range first 5 (where .Data.Pages "Section" "links") }}
 {{ .Render "summary" }}
   {{ end }}
 </div>
 <hr />
 <div class="posts">
-  {{ range first 10 (where .Site.Pages "Section" "posts") }}
+  {{ range first 10 (where .Data.Pages "Section" "posts") }}
 {{ .Render "summary" }}
   {{ end }}
 </div>
