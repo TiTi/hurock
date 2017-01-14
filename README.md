@@ -59,12 +59,12 @@ title = "Your site title"
   facebook = ""
   googleplus = ""
   linkedin = ""
-  gaID = "Google Analytics Tracking ID"
 
 [params]
   Description = "text under logo"
   # Optional
   disqusShortname = ""
+  gaID = "Google Analytics Tracking ID"
   highlight_theme = "tomorrow-night"
   notoc = true
 
