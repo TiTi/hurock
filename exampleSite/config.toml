@@ -1,0 +1,28 @@
+baseurl = "https://example.com"
+title = "Make the Web Fun Again"
+
+theme = "hurock"
+MetaDataFormat = "yaml"
+
+
+[author]
+  name = "Your name"
+  email = "your@email.com"
+  
+  # hurock theme:
+  github = ""
+  linkedin = ""
+  googleplus = ""
+
+[permalinks]
+  posts = "/:year/:month/:filename/"
+
+[params]
+  Description = "Your description"
+  notoc = true
+  disqusShortname = ""
+  gaID = ""
+
+[blackfriday]
+  plainIDAnchors = true
+
