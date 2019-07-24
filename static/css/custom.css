@@ -49,6 +49,7 @@ background-color: #F8F8F8;
 
 .sidebar {
 padding: 2rem;
+word-break: break-word;
 }
 #container {
 padding: 2rem 4rem 0;
