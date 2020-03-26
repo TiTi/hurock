@@ -2,15 +2,43 @@
 {{ partial "flex-start.html" . }}
 
 <div class="posts">
-  {{ range first 5 (where .Data.Pages "Section" "links") }}
-{{ .Render "summary" }}
+{{ range first 5 (where .Site.RegularPages "Section" "links") }}
+<section class="post">
+  <header class="post-header">
+    <p class="post-infos">
+      <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "02 Jan 2020, 15:04" }}</time>
+    </p>
+    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+  </header>
+  <div class="post-description">
+  {{ .Summary }}
+  {{ if .Truncated }}
+  <br /><a class="readmore" href="{{ .RelPermalink }}"><span class="genericon genericon-reply"></span> Read more…</a>
   {{ end }}
+  </div>
+</section>
+{{ end }}
 </div>
+
 <hr />
+
 <div class="posts">
-  {{ range first 10 (where .Data.Pages "Section" "posts") }}
-{{ .Render "summary" }}
+{{ range first 5 (where .Site.RegularPages "Section" "posts") }}
+<section class="post">
+  <header class="post-header">
+    <p class="post-infos">
+      <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "02 Jan 2020, 15:04" }}</time>
+    </p>
+    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+  </header>
+  <div class="post-description">
+  {{ .Summary }}
+  {{ if .Truncated }}
+  <br /><a class="readmore" href="{{ .RelPermalink }}"><span class="genericon genericon-reply"></span> Read more…</a>
   {{ end }}
+  </div>
+</section>
+{{ end }}
 </div>
 
 {{ partial "flex-end.html" . }}
