@@ -57,7 +57,6 @@ title = "Your site title"
   github = ""
   twitter = ""
   facebook = ""
-  googleplus = ""
   linkedin = ""
 
 [params]

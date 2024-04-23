@@ -12,7 +12,6 @@ MetaDataFormat = "yaml"
   # hurock theme:
   github = ""
   linkedin = ""
-  googleplus = ""
 
 [permalinks]
   posts = "/:year/:month/:filename/"
