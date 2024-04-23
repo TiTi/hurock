@@ -64,7 +64,6 @@ title = "Your site title"
   Description = "text under logo"
   # Optional
   disqusShortname = ""
-  gaID = "Google Analytics Tracking ID"
   highlight_theme = "tomorrow-night"
   notoc = true
 
