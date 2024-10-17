@@ -54,6 +54,7 @@ title = "Your site title"
   Description = "text under logo"
   # Optional
   disqusShortname = ""
+  gtagID = "Google Analytics Tracking ID"
   highlight_theme = "tomorrow-night"
   notoc = true
   [params.author]

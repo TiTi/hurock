@@ -1,6 +1,18 @@
 <script src="highlight/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
+{{ if .Site.Params.gtagID }}
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.gtagID }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '{{ .Site.Params.gtagID }}');
+</script>
+{{ end }}
+
 {{ partial "footer_extra.html" . }}
 
 </body>
