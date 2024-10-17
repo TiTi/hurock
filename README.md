@@ -50,22 +50,20 @@ Theme mostly insipred on theme `nofancy` but also: `hyde-x`, `lanyon`, `liquoric
 baseurl = "http://example.com"
 title = "Your site title"
 
-[author]
-  name = "Your Name"
-  email = ""
-  
-  github = ""
-  twitter = ""
-  facebook = ""
-  linkedin = ""
-
 [params]
   Description = "text under logo"
   # Optional
   disqusShortname = ""
   highlight_theme = "tomorrow-night"
   notoc = true
-
+  [params.author]
+    name = "Your Name"
+    email = ""
+  
+    github = ""
+    twitter = ""
+    facebook = ""
+    linkedin = ""
 
 # Optional sections:
 [permalinks]

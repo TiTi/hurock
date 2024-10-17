@@ -2,7 +2,7 @@
 <div class="sidebar">
   <div class="sidebar-about">
     <a href="{{ .Site.BaseURL }}">
-      <img src="media/me.jpg" title="{{ .Site.Author.name }}" alt="Me" />
+      <img src="media/me.jpg" title="{{ .Site.Params.Author.name }}" alt="Me" />
       <h4 class="sidebar-title">{{ .Site.Title }}</h4>
     </a>
     <span class="sidebar-tagline">{{ with .Site.Params.Description }} {{ . | safeHTML}} {{end}}</span>
@@ -21,26 +21,26 @@
     </ul>
   </nav>
   <div class="sidebar-externals">
-  {{ if or .Site.Author.github .Site.Author.twitter .Site.Author.facebook .Site.Author.linkedin }}
+  {{ if or .Site.Params.Author.github .Site.Params.Author.twitter .Site.Params.Author.facebook .Site.Params.Author.linkedin }}
 
-  {{ with .Site.Author.github }}
+  {{ with .Site.Params.Author.github }}
   <a class="genericon genericon-github" href="https://github.com/{{ . }}" ><!--GitHub--></a>
   {{ end }}
 
-  {{ with .Site.Author.twitter }}
+  {{ with .Site.Params.Author.twitter }}
   | <a class="genericon genericon-twitter" href="https://twitter.com/{{ . }}"><!--Twitter--></a>
   {{ end }}
 
-  {{ with .Site.Author.facebook }}
+  {{ with .Site.Params.Author.facebook }}
   | <a class="genericon genericon-facebook" href="https://www.facebook.com/{{ . }}"><!--Facebook--></a>
   {{ end }}
 
-  {{ with .Site.Author.linkedin }}
+  {{ with .Site.Params.Author.linkedin }}
   | <a class="genericon genericon-linkedin-alt" href="https://www.linkedin.com/in/{{ . }}"><!--Linkedin--></a>
   {{ end }}
 
   {{ end }}
-  | <a class="genericon genericon-mail" href="mailto:{{ .Site.Author.email }}"><!--Email--></a>
+  | <a class="genericon genericon-mail" href="mailto:{{ .Site.Params.Author.email }}"><!--Email--></a>
   </div>
   <div class="sidebar-bottom">
     <hr />
